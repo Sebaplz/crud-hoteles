@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import Loading from "../../util/Loading";
 import Error from "../../util/Error";
 import useApiData from "../../hooks/useApiData";
+import AdvertisementList from "../../components/AdvertisementList";
 
 export default function DashboardPublic() {
-  const { data, isLoading, error, currentPage, totalPages, fetchData } =
+  const { data, isLoading, error, /* currentPage, totalPages, */ fetchData } =
     useApiData();
 
   /* const handlePageChange = (newPage) => {
@@ -25,7 +26,7 @@ export default function DashboardPublic() {
               <Error error={error} />
             ) : (
               <>
-                <h1>Hola Mundo!</h1>
+                <AdvertisementList advertisement={data} />
               </>
             )}
           </>
