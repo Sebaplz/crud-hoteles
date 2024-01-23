@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";
-import { IconHome } from "@tabler/icons-react";
 
 export default function Navbar() {
   const { isAuthenticated, logout, userName, userRol } = useAuth();
@@ -11,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed z-50 w-full bg-white p-4 text-black lg:py-4">
+    <nav className="fixed z-50 w-full bg-white p-4 text-black shadow lg:py-4">
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
         <div className="flex items-center gap-4">
           <img src="/logo_acl.webp" alt="Logo ACL" className="w-20" />

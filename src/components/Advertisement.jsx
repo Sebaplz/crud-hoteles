@@ -13,7 +13,7 @@ export default function Advertisement({ item }) {
         <Link to={`/advertisement/${item.id}`}>
           <img
             src={item.imageUrl}
-            alt={`Imagen del libro ${item.title}`}
+            alt={`Imagen del lugar ${item.address}`}
             className="h-60 w-72 rounded-lg object-cover"
           />
         </Link>
@@ -22,7 +22,7 @@ export default function Advertisement({ item }) {
         </h2>
         <h3 className="w-52 truncate text-left font-bold">
           {formattedPrice}
-          <span className="font-normal"> noche</span>
+          <span className="font-normal"> la noche</span>
         </h3>
         <h4
           className={`font-bold ${item.status != "Disponible" ? "text-red-500" : "text-green-600"}`}

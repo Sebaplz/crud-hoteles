@@ -5,6 +5,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import DashboardPublic from "./pages/public/DashboardPublic";
 import Layout from "./pages/Layout";
+import InfoItem from "./pages/public/InfoItem";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<DashboardPublic />} />
+            <Route path="/advertisement/:id" element={<InfoItem />} />
           </Route>
           <Route element={<ProtectedAuth />}>
             <Route path="/login" element={<Login />} />
