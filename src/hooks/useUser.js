@@ -19,7 +19,7 @@ const useUser = () => {
       const response = await fetch(urlBase, options);
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData.message);
+        setError(errorData.error);
         return;
       }
       const data = await response.json();

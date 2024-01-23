@@ -50,6 +50,58 @@ export default function Register() {
             className="w-full rounded-lg border p-2"
           />
           <p className="mb-5 text-red-500">{errors.username?.message}</p>
+          <div className="flex w-full justify-between gap-2">
+            <div className="w-full">
+              <label
+                htmlFor="firstName"
+                className="mb-1 block font-semibold text-gray-700"
+              >
+                Nombre
+              </label>
+              <input
+                {...register("firstName", {
+                  required: "El nombre no puede estar vacio!",
+                  minLength: {
+                    value: 3,
+                    message: "La nombre debe tener al menos 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: "La nombre no puede tener más de 15 caracteres",
+                  },
+                })}
+                maxLength={15}
+                placeholder="Nombre"
+                className="w-full rounded-lg border p-2"
+              />
+              <p className="mb-5 text-red-500">{errors.firstName?.message}</p>
+            </div>
+            <div className="w-full">
+              <label
+                htmlFor="lastName"
+                className="mb-1 block font-semibold text-gray-700"
+              >
+                Apellido
+              </label>
+              <input
+                {...register("lastName", {
+                  required: "El apellido no puede estar vacio!",
+                  minLength: {
+                    value: 3,
+                    message: "La apellido debe tener al menos 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: "La apellido no puede tener más de 15 caracteres",
+                  },
+                })}
+                maxLength={15}
+                placeholder="Apellido"
+                className="w-full rounded-lg border p-2"
+              />
+              <p className="mb-5 text-red-500">{errors.lastName?.message}</p>
+            </div>
+          </div>
           <label
             htmlFor="email"
             className="mb-1 block font-semibold text-gray-700"
