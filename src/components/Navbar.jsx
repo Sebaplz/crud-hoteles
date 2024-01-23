@@ -19,17 +19,8 @@ export default function Navbar() {
             to={"/"}
             className="hidden font-bold text-black transition-colors hover:text-[#e02957] hover:underline md:block"
           >
-            Biblioteca Virtual
+            Reserva de Hoteles
           </Link>
-          {userRol == "ADMIN" && (
-            <Link
-              className="hidden items-center gap-1 font-bold text-black transition-colors hover:text-[#e02957] hover:underline md:flex"
-              to={"/dashboard"}
-            >
-              Panel de Control
-              <IconHome color="black" size={20} />
-            </Link>
-          )}
         </div>
         <div className="flex items-center md:gap-4">
           {userName && (
