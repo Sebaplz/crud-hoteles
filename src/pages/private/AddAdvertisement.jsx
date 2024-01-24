@@ -52,8 +52,10 @@ const AddAdvertisement = () => {
         setError("Error al agregar el Alojamiento");
       }
     } catch (error) {
-      console.error("Error en la solicitud: ", error);
-      setError("Error en la solicitud: " + error.message);
+      setError("Error en la solicitud");
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
     }
   };
 
