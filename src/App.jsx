@@ -6,6 +6,8 @@ import Register from "./pages/auth/Register";
 import DashboardPublic from "./pages/public/DashboardPublic";
 import Layout from "./pages/Layout";
 import InfoItem from "./pages/public/InfoItem";
+import AddAdvertisement from "./pages/private/AddAdvertisement";
+import EditAdvertisement from "./pages/private/EditAdvertisement";
 
 function App() {
   return (
@@ -20,7 +22,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Route>
-          <Route element={<ProtectedRoute />}></Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/add" element={<AddAdvertisement />} />
+            <Route path="/edit/:id" element={<EditAdvertisement />} />
+          </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

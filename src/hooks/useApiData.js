@@ -9,7 +9,7 @@ const useApiData = () => {
   const [totalPages, setTotalPages] = useState(null);
   const { email } = useAuth();
 
-  const fetchData = async (url, page = 0, size = 5) => {
+  const fetchData = async (url, page = 0, size = 6) => {
     const urlBase = `${url}?page=${page}&size=${size}&email=${email}`;
 
     try {

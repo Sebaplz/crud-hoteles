@@ -7,7 +7,7 @@ export const ProtectedRoute = () => {
   const { isAuthenticated, userRol, loading } = useAuth();
 
   if (!loading) {
-    if (isAuthenticated && userRol === "ADMIN") {
+    if (isAuthenticated && userRol === "USER") {
       return (
         <>
           <Navbar />

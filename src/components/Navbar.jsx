@@ -18,10 +18,10 @@ export default function Navbar() {
             to={"/"}
             className="hidden font-bold text-black transition-colors hover:text-[#e02957] hover:underline md:block"
           >
-            Reserva de Hoteles
+            Alojamientos
           </Link>
         </div>
-        <div className="flex items-center md:gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           {userName && (
             <p className="text-center">
               Bienvenido! <span className="font-bold">{userName}</span>
