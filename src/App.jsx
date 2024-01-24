@@ -8,6 +8,7 @@ import Layout from "./pages/Layout";
 import InfoItem from "./pages/public/InfoItem";
 import AddAdvertisement from "./pages/private/AddAdvertisement";
 import EditAdvertisement from "./pages/private/EditAdvertisement";
+import Dashboard from "./pages/private/Dashboard";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Route>
           <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/add" element={<AddAdvertisement />} />
             <Route path="/edit/:id" element={<EditAdvertisement />} />
           </Route>

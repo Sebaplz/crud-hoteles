@@ -13,7 +13,9 @@ export default function Navbar() {
     <nav className="fixed z-50 w-full bg-white p-4 text-black shadow lg:py-4">
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
         <div className="flex items-center gap-4">
-          <img src="/logo_acl.webp" alt="Logo ACL" className="w-20" />
+          <Link to={"/"}>
+            <img src="/logo_acl.webp" alt="Logo ACL" className="w-20" />
+          </Link>
           <Link
             to={"/"}
             className="hidden font-bold text-black transition-colors hover:text-[#e02957] hover:underline md:block"
@@ -23,18 +25,26 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-2 md:gap-4">
           {userName && (
-            <p className="text-center">
+            <p className="hidden text-center md:block">
               Bienvenido! <span className="font-bold">{userName}</span>
             </p>
           )}
           {isAuthenticated && userRol ? (
-            <Link
-              to={"/"}
-              onClick={handleCerrarSesion}
-              className="rounded-md bg-[#e02957] p-2 text-center font-semibold text-white transition-transform hover:scale-105 lg:p-3"
-            >
-              Cerrar Sesión
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                to={"/dashboard"}
+                className="text-center font-bold text-black transition-colors hover:text-[#e02957] hover:underline"
+              >
+                Mis Alojamientos
+              </Link>
+              <Link
+                to={"/"}
+                onClick={handleCerrarSesion}
+                className="rounded-md bg-[#e02957] p-2 text-center font-semibold text-white transition-transform hover:scale-105 lg:p-3"
+              >
+                Cerrar Sesión
+              </Link>
+            </div>
           ) : (
             <Link
               to={"/login"}

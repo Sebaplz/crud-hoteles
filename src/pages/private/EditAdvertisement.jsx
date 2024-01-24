@@ -99,7 +99,7 @@ export default function EditAdvertisement() {
       {message && <Toast message={message} />}
       {error && <ToastError message={error} />}
       <div className="mb-4 flex lg:mb-0">
-        <Link to={"/dashboard"}>
+        <Link to={"/"}>
           <IconArrowLeft color="#e02957" size={30} />
         </Link>
       </div>
@@ -175,6 +175,96 @@ export default function EditAdvertisement() {
           />
           <p className="mb-5 text-red-500">{errors.addressExtended?.message}</p>
         </div>
+        <div className="flex w-full justify-between gap-2">
+          <div className="w-full">
+            <label className="mb-1 block font-semibold text-gray-700">
+              Cantidad de Personas
+            </label>
+            <select
+              {...register("numOfPersons", {
+                required: "Selecciona la cantidad de personas",
+              })}
+              className="w-full rounded-lg border p-2"
+            >
+              <option value="" disabled hidden>
+                Selecciona la cantidad de personas
+              </option>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+            <p className="mb-5 text-red-500">{errors.numOfPersons?.message}</p>
+          </div>
+          <div className="w-full">
+            <label className="mb-1 block font-semibold text-gray-700">
+              Cantidad de Habitaciones
+            </label>
+            <select
+              {...register("numOfBedrooms", {
+                required: "Selecciona la cantidad de habitaciones",
+              })}
+              className="w-full rounded-lg border p-2"
+            >
+              <option value="" disabled hidden>
+                Selecciona la cantidad de habitaciones
+              </option>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+            <p className="mb-5 text-red-500">{errors.numOfBedrooms?.message}</p>
+          </div>
+        </div>
+        <div className="flex w-full justify-between gap-2">
+          <div className="w-full">
+            <label className="mb-1 block font-semibold text-gray-700">
+              Cantidad de Baños
+            </label>
+            <select
+              {...register("numOfBathrooms", {
+                required: "Selecciona la cantidad de baños",
+              })}
+              className="w-full rounded-lg border p-2"
+            >
+              <option value="" disabled hidden>
+                Selecciona la cantidad de baños
+              </option>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+            <p className="mb-5 text-red-500">
+              {errors.numOfBathrooms?.message}
+            </p>
+          </div>
+          <div className="w-full">
+            <label className="mb-1 block font-semibold text-gray-700">
+              Disponibilidad
+            </label>
+            <select
+              {...register("status", {
+                required: "Selecciona la disponibilidad",
+              })}
+              className="w-full rounded-lg border p-2"
+            >
+              <option value="" disabled hidden>
+                Selecciona la disponibilidad
+              </option>
+              {["Disponible", "Ocupada"].map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+            <p className="mb-5 text-red-500">{errors.status?.message}</p>
+          </div>
+        </div>
         <div className="mb-5">
           <label
             htmlFor="description"
@@ -214,96 +304,6 @@ export default function EditAdvertisement() {
             type="number"
           />
           <p className="text-red-500">{errors.pricePerNight?.message}</p>
-        </div>
-        <div className="flex w-full justify-between gap-2">
-          <div className="w-full">
-            <label className="mb-1 block font-semibold text-gray-700">
-              Cantidad de Personas
-            </label>
-            <select
-              {...register("numOfPersons", {
-                required: "Selecciona la cantidad de personas",
-              })}
-              className="w-full rounded-lg border p-2"
-            >
-              <option value="" disabled hidden>
-                Selecciona la cantidad de personas
-              </option>
-              {[1, 2, 3, 4, 5, 6].map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-            <p className="mb-5 text-red-500">{errors.numOfPersons?.message}</p>
-          </div>
-          <div className="w-full">
-            <label className="mb-1 block font-semibold text-gray-700">
-              Cantidad de Habitaciones
-            </label>
-            <select
-              {...register("numOfBedrooms", {
-                required: "Selecciona la cantidad de habitaciones",
-              })}
-              className="w-full rounded-lg border p-2"
-            >
-              <option value="" disabled hidden>
-                Selecciona la cantidad de habitaciones
-              </option>
-              {[1, 2, 3, 4, 5, 6].map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-            <p className="mb-5 text-red-500">{errors.numOfBedrooms?.message}</p>
-          </div>
-        </div>
-        <div className="flex w-full justify-between gap-2">
-          <div className="w-full">
-            <label className="mb-1 block font-semibold text-gray-700">
-              Cantidad de Baños
-            </label>
-            <select
-              {...register("numOfBathrooms", {
-                required: "Selecciona la cantidad de baños",
-              })}
-              className="w-full rounded-lg border p-2"
-            >
-              <option value="" disabled hidden>
-                Selecciona la cantidad de baños
-              </option>
-              {[1, 2, 3, 4, 5, 6].map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-            <p className="mb-5 text-red-500">
-              {errors.numOfBathrooms?.message}
-            </p>
-          </div>
-          <div className="w-full">
-            <label className="mb-1 block font-semibold text-gray-700">
-              Disponibilidad
-            </label>
-            <select
-              {...register("status", {
-                required: "Selecciona la disponibilidad",
-              })}
-              className="w-full rounded-lg border p-2"
-            >
-              <option value="" disabled hidden>
-                Selecciona la disponibilidad
-              </option>
-              {["Disponible", "Ocupada"].map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-            <p className="mb-5 text-red-500">{errors.status?.message}</p>
-          </div>
         </div>
         <div className="mb-5">
           <label
