@@ -83,12 +83,12 @@ const AddAdvertisement = () => {
                   message: "La comuna debe tener al menos 3 caracteres",
                 },
                 maxLength: {
-                  value: 15,
-                  message: "La comuna no puede tener más de 15 caracteres",
+                  value: 25,
+                  message: "La comuna no puede tener más de 25 caracteres",
                 },
               })}
               id="address"
-              maxLength={15}
+              maxLength={25}
               placeholder="Conchalí"
               className="w-full rounded-lg border p-2"
             />
