@@ -19,7 +19,7 @@ export default function Login() {
     <main className="flex min-h-screen items-center justify-center bg-gray-100">
       <section className="m-5 w-full rounded-lg bg-white p-5 shadow-lg md:w-[450px]">
         <div className="flex justify-end p-2">
-          <img src="logo_acl.webp" alt="Logo" className="w-20" />
+          <img src="/Logo.webp" alt="Logo" className="w-20" />
         </div>
         <h1 className="mb-8 text-center text-4xl font-semibold italic">
           Reserva de Hoteles

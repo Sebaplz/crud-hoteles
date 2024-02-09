@@ -175,7 +175,7 @@ export default function EditAdvertisement() {
           />
           <p className="mb-5 text-red-500">{errors.addressExtended?.message}</p>
         </div>
-        <div className="flex w-full justify-between gap-2">
+        <div className="flex w-full items-end justify-between gap-2">
           <div className="w-full">
             <label className="mb-1 block font-semibold text-gray-700">
               Cantidad de Personas

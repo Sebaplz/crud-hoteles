@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../auth/AuthProvider";
 
 /* eslint-disable react/prop-types */
-export default function Advertisement({ item }) {
+export default function Advertisement({ item, setSelectedItem, setOpenModal }) {
+  const { userRol } = useAuth();
   const formattedPrice = item.pricePerNight.toLocaleString("es-CL", {
     style: "currency",
     currency: "CLP",
@@ -24,11 +26,24 @@ export default function Advertisement({ item }) {
           {formattedPrice}
           <span className="font-normal"> la noche</span>
         </h3>
-        <h4
-          className={`font-bold ${item.status != "Disponible" ? "text-red-500" : "text-green-600"}`}
-        >
-          {item.status}
-        </h4>
+        <div className="flex items-center justify-between gap-4">
+          <h4
+            className={`font-bold ${item.status != "Disponible" ? "text-red-500" : "text-green-600"}`}
+          >
+            {item.status}
+          </h4>
+          {userRol === "ADMIN" && (
+            <button
+              className="rounded-md bg-[#e02957] px-2 py-1 font-semibold text-white transition-transform hover:scale-105"
+              onClick={() => {
+                setSelectedItem(item);
+                setOpenModal(true);
+              }}
+            >
+              Eliminar
+            </button>
+          )}
+        </div>
       </article>
     </li>
   );

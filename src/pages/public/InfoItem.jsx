@@ -58,7 +58,7 @@ export default function InfoItem() {
                   <h2>
                     {advertisement.numOfPersons} huéspedes -{" "}
                     {advertisement.numOfBedrooms} habitaciones -{" "}
-                    {advertisement.numOfBathrooms} baño
+                    {advertisement.numOfBathrooms} baños
                   </h2>
                   <h3>
                     Precio por noche:{" "}
